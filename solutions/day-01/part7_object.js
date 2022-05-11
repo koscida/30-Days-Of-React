@@ -221,30 +221,32 @@ const products = [
 	},
 ]
 
-// 1. Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
+// 1. Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and 
+// it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods. 
+// Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
 const personAccount = {
 	firstName: 'Sally', 
 	lastName: "Brown", 
 	incomes: [1500, 100], 
 	expenses: [1000, 100, 100, 50, 20],
 	totalIncome: function(){
-		return this.addIncome()
-	}, 
-	totalExpense: function() {
-		return this.addExpense()
-	}, 
-	accountInfo: function() {
-		return `Account for ${this.firstName} ${this.lastName}, total expenses: ${this.totalExpense()}, total incomes: ${this.totalIncome()}, balance: ${this.accountBalance()}`
-	},
-	addIncome: function() {
 		return this.incomes.reduce((accumulator, currentValue) => {  
 			return accumulator + currentValue;
 		});
 	}, 
-	addExpense: function() {
+	totalExpense: function() {
 		return this.expenses.reduce((accumulator, currentValue) => {  
 			return accumulator + currentValue;
 		});
+	}, 
+	accountInfo: function() {
+		return `Account for ${this.firstName} ${this.lastName}, total expenses: ${this.totalExpense()}, total incomes: ${this.totalIncome()}, balance: ${this.accountBalance()}`
+	},
+	addIncome: function(newIncome) {
+		this.incomes.push(newIncome)
+	}, 
+	addExpense: function(newExpense) {
+		this.expenses.push(newExpense)
 	},
 	accountBalance: function() {
 		return this.totalIncome() - this.totalExpense()
@@ -252,14 +254,43 @@ const personAccount = {
 }
 console.log(personAccount.accountInfo())
 
-// 2a. Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
-
+// 2a. Create a function called signUp which allows user to add to the collection. 
+// If user exists, inform the user that he has already an account.
+function signUp(newUser) {
+	if(usersL3.find(element => element._id == newUser._id) === undefined) {
+		console.log("Account already exists")
+	} else {
+		usersL3.push(newUser)
+		console.log("Account added")
+	}
+}
 
 // 2b. Create a function called signIn which allows user to sign in to the application
+function signIn(userId) {
+	usersL3.forEach((element) => element.isLoggedIn = element._id === userId ? true : element.isLoggedIn )
+}
+console.log("Sign in")
+console.log(usersL3)
+signIn('ab12ex')
+console.log(usersL3)
 
-// 3. The products array has three elements and each of them has six properties. a. Create a function called rateProduct which rates the product b. Create a function called averageRating which calculate the average rating of a product
+// 3. The products array has three elements and each of them has six properties. 
+// 3a. Create a function called rateProduct which rates the product 
+products.forEach((element) => element.rateProduct = function(newRating){ 
+	this.ratings.push(newRating)
+} )
+console.log(products)
 
-// 4. Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+// 3b. Create a function called averageRating which calculate the average rating of a product
+products.forEach((element) => element.averageRating = function(){ 
+	const rating = 0;
+	this.ratings.reduce((prev, curr) => prev + curr, rating);
+	return rating/this.ratings.length
+} )
+console.log(products)
+
+// 4. Create a function called likeProduct. This function will helps to like to the product 
+// if it is not liked and remove like if it was liked.
 
 
 
