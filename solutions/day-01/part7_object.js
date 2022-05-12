@@ -1,20 +1,22 @@
+console.log('-- Part 7: Objects --')
+
 // ////////////////// //
 // Exercises: Level 1 //
 // ////////////////// //
-console.log('-- Exercises: Level 1 --')
+console.log('- Exercises: Level 1 -')
 
 const dog = {
-    name: "Uzi",
-    legs: 4,
-    color: "white and grey",
-    age: 4,
-    breed: "Yorkie",
-    bark: function () {
-        return 'woof woof'
-    },
-    getDogInfo: function () {
-        return `${this.name} is a ${this.age}-year-old ${this.color} ${this.breed} breed dog with ${this.legs} legs.`
-    },
+	name: "Uzi",
+	legs: 4,
+	color: "white and grey",
+	age: 4,
+	breed: "Yorkie",
+	bark: function () {
+		return 'woof woof'
+	},
+	getDogInfo: function () {
+		return `${this.name} is a ${this.age}-year-old ${this.color} ${this.breed} breed dog with ${this.legs} legs.`
+	},
 }
 
 console.log(dog)
@@ -30,65 +32,65 @@ console.log(dog.getDogInfo())
 // ////////////////// //
 // Exercises: Level 2 //
 // ////////////////// //
-console.log('-- Exercises: Level 2 --')
+console.log('- Exercises: Level 2 -')
 
 const usersL2 = {
-    Alex: {
-      email: 'alex@alex.com',
-      skills: ['HTML', 'CSS', 'JavaScript'],
-      age: 20,
-      isLoggedIn: false,
-      points: 30
-    },
-    Asab: {
-      email: 'asab@asab.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
-      age: 25,
-      isLoggedIn: false,
-      points: 50
-    },
-    Brook: {
-      email: 'daniel@daniel.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
-      age: 30,
-      isLoggedIn: true,
-      points: 50
-    },
-    Daniel: {
-      email: 'daniel@alex.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
-      age: 20,
-      isLoggedIn: false,
-      points: 40
-    },
-    John: {
-      email: 'john@john.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
-      age: 20,
-      isLoggedIn: true,
-      points: 50
-    },
-    Thomas: {
-      email: 'thomas@thomas.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-      age: 20,
-      isLoggedIn: false,
-      points: 40
-    },
-    Paul: {
-      email: 'paul@paul.com',
-      skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
-      age: 20,
-      isLoggedIn: false,
-      points: 40
-    }
+	Alex: {
+	  email: 'alex@alex.com',
+	  skills: ['HTML', 'CSS', 'JavaScript'],
+	  age: 20,
+	  isLoggedIn: false,
+	  points: 30
+	},
+	Asab: {
+	  email: 'asab@asab.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+	  age: 25,
+	  isLoggedIn: false,
+	  points: 50
+	},
+	Brook: {
+	  email: 'daniel@daniel.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+	  age: 30,
+	  isLoggedIn: true,
+	  points: 50
+	},
+	Daniel: {
+	  email: 'daniel@alex.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+	  age: 20,
+	  isLoggedIn: false,
+	  points: 40
+	},
+	John: {
+	  email: 'john@john.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+	  age: 20,
+	  isLoggedIn: true,
+	  points: 50
+	},
+	Thomas: {
+	  email: 'thomas@thomas.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+	  age: 20,
+	  isLoggedIn: false,
+	  points: 40
+	},
+	Paul: {
+	  email: 'paul@paul.com',
+	  skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+	  age: 20,
+	  isLoggedIn: false,
+	  points: 40
+	}
 }
 
 // 1. Find the person who has many skills in the users object.
 maxSkills = 0;
 maxSkillers = [];
 Object.keys(usersL2).forEach(key => {
-    if(usersL2[key].skills.length > maxSkills) {
+	if(usersL2[key].skills.length > maxSkills) {
 		maxSkillers = [key];
 	} else if(usersL2[key].skills.length == maxSkills) {
 		maxSkillers.push(key);
@@ -101,7 +103,7 @@ console.log(maxSkillers);
 loggedIn = 0;
 highPoints = 0;
 Object.keys(usersL2).forEach(key => {
-    if(usersL2[key].isLoggedIn) {
+	if(usersL2[key].isLoggedIn) {
 		loggedIn++
 	}
 	if(usersL2[key].points >= 50) {
@@ -115,7 +117,7 @@ console.log(`Users with more than or equal to 50 points: ${highPoints}`)
 mernDevs = [];
 Object.keys(usersL2).forEach(key => {
 	skills = usersL2[key].skills
-    if(skills.includes('MongoDB') && skills.includes('Express') && skills.includes('React') && skills.includes('Node')) {
+	if(skills.includes('MongoDB') && skills.includes('Express') && skills.includes('React') && skills.includes('Node')) {
 		mernDevs.push(key);
 	}
 });
@@ -146,7 +148,7 @@ console.log(Object.values(usersL2))
 // ////////////////// //
 // Exercises: Level 3 //
 // ////////////////// //
-console.log('-- Exercises: Level 3 --')
+console.log('- Exercises: Level 3 -')
 
 const usersL3 = [
 	{

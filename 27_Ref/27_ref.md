@@ -37,16 +37,16 @@ import ReactDOM from 'react-dom'
 const App = (props) => {
   const ref = useRef(null)
   const onClick = () => {
-    let value = ref.current.value
-    alert(value)
+	let value = ref.current.value
+	alert(value)
   }
   return (
-    <div className='App'>
-      <h1>How to use data from uncontrolled input using useRef</h1>
-      <input type='text' ref={ref} />
-      <br />
-      <button onClick={onClick}>Get Input Data</button>
-    </div>
+	<div className='App'>
+	  <h1>How to use data from uncontrolled input using useRef</h1>
+	  <input type='text' ref={ref} />
+	  <br />
+	  <button onClick={onClick}>Get Input Data</button>
+	</div>
   )
 }
 
@@ -65,15 +65,15 @@ import ReactDOM from 'react-dom'
 const App = (props) => {
   const ref = useRef(null)
   const onClick = () => {
-    ref.current.focus()
+	ref.current.focus()
   }
   return (
-    <div className='App'>
-      <h1>How to focus on input element useRef</h1>
-      <input type='text' ref={ref} />
-      <br />
-      <button onClick={onClick}>Click to Focus on input</button>
-    </div>
+	<div className='App'>
+	  <h1>How to focus on input element useRef</h1>
+	  <input type='text' ref={ref} />
+	  <br />
+	  <button onClick={onClick}>Click to Focus on input</button>
+	</div>
   )
 }
 
@@ -92,15 +92,15 @@ import ReactDOM from 'react-dom'
 const App = (props) => {
   const ref = useRef(null)
   const onClick = () => {
-    let content = ref.current.textContent
-    alert(content)
-    console.log(content)
+	let content = ref.current.textContent
+	alert(content)
+	console.log(content)
   }
   return (
-    <div className='App'>
-      <h1 ref={ref}>How to getting content from the DOM tree</h1>
-      <button onClick={onClick}>Getting Content</button>
-    </div>
+	<div className='App'>
+	  <h1 ref={ref}>How to getting content from the DOM tree</h1>
+	  <button onClick={onClick}>Getting Content</button>
+	</div>
   )
 }
 
@@ -119,15 +119,15 @@ import ReactDOM from 'react-dom'
 const App = (props) => {
   const ref = useRef(null)
   const onClick = () => {
-    ref.current.style.backgroundColor = '#61dbfb'
-    ref.current.style.padding = '50px'
-    ref.current.style.textAlign = 'center'
+	ref.current.style.backgroundColor = '#61dbfb'
+	ref.current.style.padding = '50px'
+	ref.current.style.textAlign = 'center'
   }
   return (
-    <div className='App'>
-      <h1 ref={ref}>How to style HTML from the DOM tree using useRef</h1>
-      <button onClick={onClick}>Style it</button>
-    </div>
+	<div className='App'>
+	  <h1 ref={ref}>How to style HTML from the DOM tree using useRef</h1>
+	  <button onClick={onClick}>Style it</button>
+	</div>
   )
 }
 
