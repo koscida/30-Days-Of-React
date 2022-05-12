@@ -15,6 +15,9 @@ class Animal_p12 {
 		this.color = color
 		this.legs = legs
 	}
+	getInfo() {
+		return `${this.name} is a ${this.age}-year-old ${this.color} animal with ${this.legs} legs`
+	}
 }
 const animal_p12 = new Animal_p12('Uzi', 4, 'white', 4)
 console.log(animal_p12)
@@ -26,17 +29,25 @@ class Dog_p12 extends Animal_p12 {
 		super(name, age, color, legs)
 		this.breed = breed
 	}
+	getInfo() {
+		return `${this.name} is a ${this.age}-year-old ${this.color} ${this.breed} with ${this.legs} legs`
+	}
 }
 class Cat_p12 extends Animal_p12 {
 	constructor(name, age, color, legs, isIndoorCat) {
 		super(name, age, color, legs)
 		this.isIndoorCat = isIndoorCat
 	}
+	getInfo() {
+		return `${this.name} is a ${this.isIndoorCat?'indoor':'outdoor'} ${this.age}-year-old ${this.color} cat with ${this.legs} legs`
+	}
 }
 const dog_p12 = new Dog_p12('Uzi', 4, 'white', 4, "Yorkie")
 console.log(dog_p12)
 const cat_p12 = new Cat_p12('Rags', 8, 'orange', 4, true)
 console.log(cat_p12)
+
+
 
 // ////////////////// //
 // Exercises: Level 2 //
@@ -46,6 +57,9 @@ console.log('- Exercises: Level 2 -')
 
 // Override the method you create in Animal class
 console.log("Override methods in Animal class")
+console.log(dog_p12.getInfo())
+console.log(cat_p12.getInfo())
+
 
 
 // ////////////////// //
